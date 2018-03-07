@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="MySuite1" verbose="2" thread-count="4" parallel="methods">
+    <test name="MyRegression">
+        <classes>
+            <class name="com.glb.bootcamp.tae.testng.ThreadLocalTest"/>
+        </classes>
+    </test>
+</suite>
