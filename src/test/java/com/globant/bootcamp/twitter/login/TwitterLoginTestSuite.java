@@ -6,6 +6,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import static com.globant.bootcamp.twitter.driver.Drivers.quit;
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 /**
@@ -19,13 +20,19 @@ public class TwitterLoginTestSuite {
      */
     @AfterMethod
     public void tearDown() {
-        quit();
+        //quit();
     }
 
     @Test
     public void testSuccessfulLogin() {
-        HomePage homePage = new LoginPage().login("damianmoga@gmail.com", "1q2w3e4r");
+        HomePage homePage = new LoginPage().login("desteban1117@gmail.com", "test123");
         assertTrue(homePage.hasTweetButton(), ":)");
+    }
+
+    @Test
+    public void testSuccessfulTweet(){
+        HomePage homePage = new LoginPage().login("desteban1117@gmail.com", "test123");
+        assertEquals(homePage.getTweet(), "test2");
     }
 
 }
